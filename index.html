@@ -7,39 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="verify-container">
-        <div class="background-anim">
-            <div class="ring ring1"></div>
-            <div class="ring ring2"></div>
-            <div class="ring ring3"></div>                        
-            <div class="particle" style="left:40px;top:60px;width:10px;height:10px;animation-delay:0s;"></div>
-            <div class="particle" style="left:120px;top:180px;width:8px;height:8px;animation-delay:0.5s;"></div>
-            <div class="particle" style="left:200px;top:100px;width:12px;height:12px;animation-delay:1s;"></div>
-            <div class="particle" style="left:80px;top:220px;width:7px;height:7px;animation-delay:1.5s;"></div>
-            <div class="particle" style="left:160px;top:40px;width:9px;height:9px;animation-delay:2s;"></div>
+    <div class="verify-wrapper">
+      <div class="verify-card">
+        <div class="verify-loader" id="verify-loader">
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5" />
+          </svg>
         </div>
-        <div class="center-content">
-            <div class="loader" id="loader">
-                <div class="loader-inner"></div>
-            </div>
-            <div class="circle" id="circle">
-                <div class="checkmark" id="checkmark"></div>
-            </div>
-            <h1 id="status-text">Du wirst verifiziert...</h1>
-            <p class="loading-text" id="loading-text">Bitte warten, deine Verifizierung wird durchgeführt...</p>
+        <div class="verify-success" id="verify-success">
+          <svg class="checkmark" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+            <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
+          </svg>
         </div>
+        <h1 id="verify-title">Du wirst verifiziert...</h1>
+        <p id="verify-desc">Bitte warten, deine Verifizierung wird durchgeführt.</p>
+      </div>
     </div>
     <script>
-    
-    setTimeout(function() {
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('circle').style.display = 'flex';
-        document.getElementById('checkmark').style.opacity = '1';
-        document.getElementById('status-text').textContent = 'Verifizierung erfolgreich!';
-        document.getElementById('loading-text').textContent = 'Du bist jetzt verifiziert.';
-        document.getElementById('loading-text').style.opacity = '1';
-    }, Math.floor(Math.random()*3000)+3000);
+      document.getElementById('verify-success').style.display = 'none';
+      setTimeout(function() {
+        document.getElementById('verify-loader').style.display = 'none';
+        document.getElementById('verify-success').style.display = 'block';
+        document.getElementById('verify-title').textContent = 'Verifizierung erfolgreich!';
+        document.getElementById('verify-desc').textContent = 'Du bist jetzt verifiziert.';
+      }, Math.floor(Math.random()*3000)+3000);
     </script>
-    </div>
 </body>
 </html>

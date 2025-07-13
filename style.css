@@ -8,6 +8,92 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+.verify-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #111 60%, #003a1a 100%);
+}
+
+.verify-card {
+  background: #181c1b;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #00ff8822;
+  padding: 48px 36px 36px 36px;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.verify-loader {
+  margin-bottom: 32px;
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+.spinner .path {
+  stroke: #00ff88;
+  stroke-linecap: round;
+}
+
+.verify-success {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkmark {
+  width: 70px;
+  height: 70px;
+  display: block;
+}
+.checkmark-circle {
+  stroke: #00ff88;
+  stroke-width: 4;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: strokeCircle 0.6s forwards;
+}
+.checkmark-check {
+  stroke: #00ff88;
+  stroke-width: 4;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: strokeCheck 0.4s 0.6s forwards;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+@keyframes strokeCircle {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes strokeCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+#verify-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00ff88;
+  margin-bottom: 12px;
+  text-align: center;
+  text-shadow: 0 0 12px #00ff8844;
+}
+#verify-desc {
+  font-size: 1.1rem;
+  color: #e0ffe0;
+  text-align: center;
+  margin-bottom: 0;
+}
 /* removed stray closing bracket */
 
 .verify-container {
